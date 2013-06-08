@@ -1,8 +1,5 @@
 program fortrancpp
 
-  ! program references
-  use, intrinsic :: iso_c_binding
-
   ! program options
   implicit none
 
@@ -10,14 +7,14 @@ program fortrancpp
   interface
     subroutine change_data (npts, vec) bind (c)
       use iso_c_binding
-      integer (c_int), VALUE :: npts
-      real (c_double) :: vec(*)
+      integer(c_int), VALUE :: npts
+      real(c_double) :: vec(*)
     end subroutine change_data
   end interface
 
   ! define variables
-  integer (c_int) :: npts
-  real (c_double), allocatable :: vec(:)
+  integer :: npts
+  real(8), allocatable :: vec(:)
 
   ! read in from user
   print *, 'How many data points to read in:'
