@@ -1,7 +1,4 @@
 # include <cstdlib>
-# include <iostream>
-using namespace std;
-
 # include "data.hpp"
 
 void change_data( int npts, double vec[] )
