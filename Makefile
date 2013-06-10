@@ -8,14 +8,14 @@ OBJS = testc.o
 
 all: main lib 
 
-main : testcode.o $(OBJS) 
-	$(F90) -o testcode testcode.o $(OBJS) -lstdc++
+main : main.o $(OBJS) 
+	$(F90) -o testcode main.o $(OBJS) -lstdc++
 
 testc.o : testc.c   
 	$(CC) $(CFLAGS) -g -c testc.c  
 
-testcode.o : testcode.f90
-	$(F90) -g -c -cpp testcode.f90
+main.o : main.f90
+	$(F90) -g -c -cpp main.f90
 
 # Default Targets for Cleaning up the Environment
 clean :
