@@ -75,5 +75,6 @@ program testcode
 ! set values to vector
   print *, n
   call vecsetvalues(x, n, vec3)
+  call vecgetvalues(x, n)
 
 end program testcode

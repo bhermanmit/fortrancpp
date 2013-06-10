@@ -8,10 +8,11 @@ struct Vec
 };
 
 extern "C" {
-    void testret_( float *mat);
-    float testdot_( int *N, float *vec1, float *vec2);
-    void testmat_( int *N, float *mat1, float *mat2, float *mat3);
-    void vecsetvalues_( Vec *x, int *n, double vals[]);
+    void testret_(float *mat);
+    float testdot_(int *N, float *vec1, float *vec2);
+    void testmat_(int *N, float *mat1, float *mat2, float *mat3);
+    void vecsetvalues_(Vec *x, int *n, double vals[]);
+    void vecgetvalues_(Vec *x, int *n);
     }
 
 void testret_( float *mat ) 
@@ -57,4 +58,13 @@ void vecsetvalues_( Vec *x, int *n, double vals[] )
    {
       x -> values[i] = &vals[i];
    }
+}
+
+void vecgetvalues_( Vec *x, int *n )
+{
+   for(int i = 0; i < *n; i++)
+   {
+     printf("%f\n", *x -> values[i]);
+   }
+
 }
