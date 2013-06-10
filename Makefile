@@ -9,7 +9,7 @@ OBJS = testc.o
 all: main lib 
 
 main : main.o $(OBJS) 
-	$(F90) -o testcode main.o $(OBJS) -lstdc++
+	$(F90) -g -o testcode main.o $(OBJS) -lstdc++
 
 testc.o : testc.c   
 	$(CC) $(CFLAGS) -g -c testc.c  
