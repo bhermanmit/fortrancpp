@@ -2,6 +2,30 @@ program main
 
 #define Vec integer(8)
 
+  interface
+
+    subroutine VecCreate(x, n)
+      Vec :: x
+      integer :: n
+    end subroutine VecCreate
+
+    subroutine VecSetValue(x, i, vec)
+      Vec :: x
+      integer :: i
+      real(8) :: vec(*)
+    end subroutine VecSetValue
+
+    subroutine VecPrint(x, n)
+      Vec :: x
+      integer :: n
+    end subroutine VecPrint
+
+    subroutine VecDestroy(x)
+      Vec :: x
+    end subroutine VecDestroy
+
+  end interface
+
   Vec :: x
   integer :: n = 4
   integer :: i
