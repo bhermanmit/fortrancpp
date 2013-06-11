@@ -15,9 +15,8 @@ program main
       real(8) :: vec(*)
     end subroutine VecSetValue
 
-    subroutine VecPrint(x, n)
+    subroutine VecPrint(x)
       Vec :: x
-      integer :: n
     end subroutine VecPrint
 
     subroutine VecDestroy(x)
@@ -35,7 +34,9 @@ program main
   do i = 1, n
     call VecSetValue(x, i-1, vec(i))
   end do
-  call VecPrint(x, n)
+  call VecPrint(x)
+  vec = (/5.0_8, 6.0_8, 7.0_8, 8.0_8/)
+  call VecPrint(x)
   call VecDestroy(x)
 
 end program main 
