@@ -1,5 +1,5 @@
-CC = g++
-F90 = gfortran 
+CC = icc
+F90 = ifort 
 # Make sure the CC and F77 compilers were built with the same glibc library
 # g77 will work fine on most systems
 CFLAGS = -Wall 
