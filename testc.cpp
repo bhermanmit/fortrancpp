@@ -3,28 +3,31 @@
 
 struct Vec
 {
-  int n;
   double *values;
+  int n;
 };
 
 extern "C" {
-    void veccreate(Vec *x, int n);
-    void vecsetvalue(Vec  *x, int i, double val);
+    Vec * veccreate(Vec *x, int n);
+    Vec * vecsetvalue(Vec  *x, int i, double val);
     void vecprint(Vec *x);
-    void vecdestroy(Vec *x);
+    Vec * vecdestroy(Vec *x);
     }
 
-void veccreate(Vec *x, int n)
+Vec * veccreate(Vec *x, int n)
 {
     double *temp = new double[n];
+    x = new Vec;
     printf("%d\n",n);
     x -> n = n;
     x -> values = temp;
+    return x;
 }
 
-void vecsetvalue(Vec *x, int i, double val)
+Vec * vecsetvalue(Vec *x, int i, double val)
 {
      x -> values[i] = val;
+     return x;
 }
 
 void vecprint(Vec *x)
@@ -35,7 +38,9 @@ void vecprint(Vec *x)
     }
 }
 
-void vecdestroy(Vec *x)
+Vec * vecdestroy(Vec *x)
 {
     delete[] x -> values;
+    x = NULL;
+    return x;
 }

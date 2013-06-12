@@ -11,8 +11,8 @@ all: main lib
 main : main.o $(OBJS) 
 	$(F90) -g -o testcode main.o $(OBJS) -lstdc++
 
-testc.o : testc.c   
-	$(CC) $(CFLAGS) -g -c testc.c  
+testc.o : testc.cpp
+	$(CC) $(CFLAGS) -g -c testc.cpp
 
 main.o : main.f90
 	$(F90) -g -c -cpp main.f90
@@ -25,10 +25,10 @@ clean :
 pristine :
 	rm *.o
 	rm *.a
-	touch *.c
+	touch *.cpp
 
 ctags :
-	ctags *.c
+	ctags *.cpp
 
 # Target for making the library
 
